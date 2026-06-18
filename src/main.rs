@@ -9,6 +9,11 @@ struct Cli {
 
 #[derive(Subcommand)]
 enum Commands {
+
+    /// Create a new C/C++ project
+    #[command(long_about = "Creates a new C/C++ project with the name following the command")]
+    New,
+
     /// Refresh the local package cache
     #[command(long_about = "Refreshes CCPM to the newest version and fetches missing external dependencies.")]
     Refresh,
@@ -30,6 +35,7 @@ fn main() {
     let args = Cli::parse();
 
     match args.command {
+        Commands::New => println!("Creating new..."),
         Commands::Refresh => println!("Refreshing..."),
         Commands::Build => println!("Building..."),
         Commands::Release => println!("Releasing..."),
