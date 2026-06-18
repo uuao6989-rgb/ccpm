@@ -41,7 +41,6 @@ fn main() {
         Commands::Release => println!("Releasing..."),
         Commands::Version => {
             // env!("CARGO_PKG_VERSION") dynamically pulls the version from Cargo.toml,
-            // but since you hardcoded it in the attribute, we can print it here:
             print!("ccpm ");
             println!(env!("CARGO_PKG_VERSION"))
         }
